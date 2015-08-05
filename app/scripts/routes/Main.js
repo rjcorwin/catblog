@@ -6,7 +6,7 @@ Catblog.Routers = Catblog.Routers || {};
   'use strict';
 
   Catblog.Routers.Main = Backbone.Router.extend({
-    
+
     routes: {
       '': 'home',
       'about': 'about',
@@ -18,11 +18,16 @@ Catblog.Routers = Catblog.Routers || {};
     },
 
     about: function() {
-      $('.main').html('All about the Cat Blog.')
+      var aboutView = new Catblog.Views.About()
+      aboutView.render()
+      $('.main').html(aboutView.el)
     },
 
     contact: function() {
       $('.main').html('Contact the Cat Blog.')
+      var aboutView = new Catblog.Views.About()
+      aboutView.render()
+      $('.main').append(aboutView.el)
     }
 
   });
