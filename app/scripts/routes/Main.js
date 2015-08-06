@@ -25,9 +25,15 @@ Catblog.Routers = Catblog.Routers || {};
 
     contact: function() {
       $('.main').html('Contact the Cat Blog.')
-      var aboutView = new Catblog.Views.About()
-      aboutView.render()
-      $('.main').append(aboutView.el)
+      var contactModel = new Catblog.Models.Contact()
+      contactModel.set('name', 'Jerry')
+      contactModel.set('email', 'jerry@isovera.com')
+      var contactView = new Catblog.Views.Contact({model: contactModel})
+      contactView.render()
+      $('.main').append(contactView.el)
+      window.contactModel = contactModel
+
+
     }
 
   });
