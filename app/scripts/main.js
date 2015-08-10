@@ -9,6 +9,7 @@ window.Catblog = {
   init: function () {
     'use strict';
     var router = new Catblog.Routers.Main()
+    this.server = 'http://local.catblog.com'
     Backbone.history.start()
   }
 };

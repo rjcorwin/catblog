@@ -15,6 +15,11 @@ Catblog.Routers = Catblog.Routers || {};
 
     home: function() {
       $('.main').html('Welcome the Cat Blog.')
+      var blogsCollection = new Catblog.Collections.Blogs()
+      blogsCollection.on('sync', function() {
+        console.log(blogsCollection.models)
+      })
+      blogsCollection.fetch()
     },
 
     about: function() {
